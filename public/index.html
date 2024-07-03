@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>React App</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+  <style>
+    .hideequation {
+      display: none;
+    }
+
+    .color-white {
+      color: #FFF !important;
+    }
+  </style>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+
+ 
+
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Fancybox JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+  <!-- MixItUp JS -->
+  <script src="https://cdn.jsdelivr.net/npm/mixitup@3.3.1/dist/mixitup.min.js"></script>
+  <!-- Owl Carousel JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <!-- Revolution Slider JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rs-plugin/5.4.8/js/jquery.themepunch.tools.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rs-plugin/5.4.8/js/jquery.themepunch.revolution.min.js"></script>
+  <!-- WOW.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <!-- Google Maps JS -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+  <script>
+    new WOW().init();
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js'></script>
+  <!-- <script>
+    const cookieBox = document.getElementById('js-cookie-box');
+    const cookieBg = document.getElementById('js-cookie-bg');
+    const acceptButton = document.getElementById('js-cookie-accept');
+    const rejectButton = document.getElementById('js-cookie-reject');
+
+    function hideCookieConsent() {
+      cookieBox.classList.add('cookie-box--hide');
+      cookieBg.classList.add('cookie-bg--hide');
+    }
+
+    function showCookieConsent() {
+      cookieBox.classList.remove('cookie-box--hide');
+      cookieBg.classList.remove('cookie-bg--hide');
+    }
+
+    if (!Cookies.get('cookie-box')) {
+      showCookieConsent();
+      acceptButton.onclick = function () {
+        Cookies.set('cookie-box', true, { expires: 7 });
+        hideCookieConsent();
+      };
+      rejectButton.onclick = function () {
+        hideCookieConsent();
+      };
+    } else {
+      hideCookieConsent();
+    }
+  </script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+  <!-- <script>
+
+    let num1, num2, operator, correctAnswer;
+    function generateEquation() {
+      // alert('generateEquation');
+
+      num1 = Math.floor(Math.random() * 10);
+      num2 = Math.floor(Math.random() * 10);
+      operator = ['+', '-', '*'][Math.floor(Math.random() * 3)];
+
+      switch (operator) {
+        case '+':
+          correctAnswer = num1 + num2;
+          break;
+        case '-':
+          correctAnswer = num1 - num2;
+          break;
+        case '*':
+          correctAnswer = num1 * num2;
+          break;
+      }
+      //alert('Anti-Spam: What is ' + num1 + ' ' + operator + ' ' + num2 + ' ?');
+
+      $('#seequation').html('Anti-Spam: What is ' + num1 + ' ' + operator + ' ' + num2 + '?');
+      $('.seequation').html('Anti-Spam: What is ' + num1 + ' ' + operator + ' ' + num2 + '?');
+    }
+
+    function checkAnswer() {
+      const userAnswer = parseFloat($('#seanswer').val());
+      if (userAnswer === correctAnswer) {
+        $('#security-ans-error').html('');
+        return 1;
+
+      } else {
+        $('#security-ans-error').html('Incorrect. Please try again.');
+
+        return 0;
+
+      }
+    }
+
+
+    $('#securitysubmit').click(function () {
+      //checkAnswer();
+    });
+
+
+
+
+    $('#securitysubmit').click(function () {
+      canswer = checkAnswer();
+      // alert(correctAnswer);
+      // alert($('#seanswer').val())
+      if (correctAnswer == $('#seanswer').val()) {
+        // alert('yes');
+        $('#sequretiquestionModal').modal('hide');
+        $('#seanswer').val('');
+        $('.myModelicon').html('<i class="fa fa-spinner"></i>');
+        $('.mymodelmodal-title').html('Please wait');
+        $('.mymodelmbody').html('we are processing your request...');
+        $('.okbtn').hide();
+        $('#myModal').modal({
+          backdrop: 'static',
+          keyboard: false
+        });
+        if ($('#securitysubmit').attr('rel') == 'joinourcommunity') {
+          $.ajax({
+            type: "POST",
+            url: 'enquirysave.php',
+            data: $('#joinourcommunityform').serialize(),
+            success: function (data) {
+              console.log(data);
+              //$('#processingptag').hide();
+              //$('#successptag').show();
+              $('.myModelicon').html('<i class="fa fa-check" aria-hidden="true"></i>');
+              $('.mymodelmodal-title').html('Join Our Community!');
+              $('.mymodelmbody').html('You team will contact you soon!');
+              $('.okbtn').show();
+              $('#myModal').modal({
+                backdrop: 'static',
+                keyboard: false
+              });
+              $('#popupokbtn').click(function () {
+                $('#myModal').modal('hide');
+                $('#joinourcommunityemail').val('');
+                $('#joinourcommunityfname').val('');
+                $('#joinourcommunitylname').val('');
+              });
+            }
+          });
+        } else if ($('#securitysubmit').attr('rel') == 'enquiry') {
+          var enquiryname = $('#enquiryname').val();
+          var enquiryemail = $('#enquiryemail').val();
+          var enquiryquery = $('#floatingTextarea2').val();
+          var category = $('#category').val();
+          $.ajax({
+            type: 'POST',
+            url: 'https://nursing-meetings.com/development/enquirysave.php',
+            data: {
+              enquiryname: enquiryname,
+              enquiryemail: enquiryemail,
+              enquiryquery: enquiryquery,
+              category: category,
+            },
+            success: function (data) {
+              if (data == 'submitted successfully') {
+                $('#processingptag').hide();
+                $('#successptag').show();
+                $('.myModelicon').html('<i class="fa fa-check" aria-hidden="true"></i>');
+                $('.mymodelmodal-title').html('Enquiry Form');
+                $('.mymodelmbody').html('Enquiry Form submitted Successfully, our team contact you soon !');
+                $('#successptag').html('Enquiry Form submitted Successfully, our team contact you soon !');
+                $('.okbtn').show();
+
+                $('#enquiryname').val('');
+                $('#enquiryemail').val('');
+                $('#floatingTextarea2').val('');
+                $("#enquiry_submit_btn").html("Submit");
+                $("#enquiry_submit_btn").attr("disabled", false);
+              } else {
+                $('#processingptag').hide();
+                $('#successptag').show();
+                $('.myModelicon').html('<i class="fa fa-times error" aria-hidden="true"></i>');
+                $('.mymodelmodal-title').html('Enquiry Form');
+                $('#successptag').html('Some thing went wrong');
+                $('.mymodelmbody').html('');
+                $('.okbtn').show();
+              }
+            }
+          });
+
+        }
+
+
+      } else {
+        return false;
+        //alert('Please enter correct answer');
+      }
+    });
+
+
+    $('#enquiryname').on('keyup', function () {
+      var enquiryname = $(this).val();
+      if (enquiryname == '') {
+        $('#enquiryname_error').html('Please enter your Name');
+      } else {
+        $('#enquiryname_error').html('');
+      }
+    });
+    $('#enquiryemail').on('keyup', function () {
+      var enquiryemail = $(this).val();
+      if (enquiryemail == '') {
+        $('#enquiryemail_error').html('Please enter your email');
+      } else {
+        var email = $('#enquiryemail').val();
+        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+        if (!emailReg.test(email)) {
+          $('#enquiryemail_error').html('Please enter valid email');
+          error = 1;
+        } else {
+          $('#enquiryemail_error').html('');
+        }
+
+      }
+    });
+    $('#floatingTextarea2').on('keyup', function () {
+      var enquiryquery = $(this).val();
+      if (enquiryquery == '') {
+        $('#enquiryquery_error').html('Please enter your query');
+      } else {
+        $('#enquiryquery_error').html('');
+      }
+    });
+    function enquiryformsubmit() {
+
+
+      var enquiryname = $('#enquiryname').val();
+      var enquiryemail = $('#enquiryemail').val();
+      var enquiryquery = $('#floatingTextarea2').val();
+      var category = $('#category').val();
+      error = 0;
+      if (enquiryname == '') {
+        $('#enquiryname_error').html('Please enter your Name');
+        error = 1;
+      }
+      if (enquiryemail == '') {
+        $('#enquiryemail_error').html('Please enter your email');
+        error = 1;
+      } else {
+        var email = $('#enquiryemail').val();
+        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+        if (!emailReg.test(email)) {
+          $('#enquiryemail_error').html('Please enter valid email');
+          error = 1;
+        }
+
+      }
+      if (enquiryquery == '') {
+        $('#enquiryquery_error').html('Please enter your query');
+        error = 1;
+      }
+      if (error == 1) {
+        return false;
+      } else {
+
+        generateEquation();
+        $('#sequretiquestionModal').modal('show');
+
+        $('#securitysubmit').attr('rel', 'enquiry');
+
+      }
+    }
+  </script>
+  <script>
+    $('#volunteerapplybtn').click(function (event) {
+      event.preventDefault(); // Prevent default anchor click behavior
+      generateEquation();
+      $('#Volunteerformmodel').modal('show');
+      $('#popupokbtn').hide();
+    });
+    function savevolunteer() {
+
+      error = 0;
+      if ($('#volunteeremail').val() == '') {
+        $('#volunteeremail-error').html('Please enter the Email');
+        $('#volunteeremail').focus();
+        error = 1
+      } else {
+        var email = $('#volunteeremail').val();
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          $('#volunteeremail').focus();
+          $('#volunteeremail-error').html('Please enter a valid email');
+          error = 1
+        } else {
+          $('#volunteeremail-error').html('');
+        }
+
+      }
+      if ($('#volunteerfname').val() == '') {
+        $('#volunteerfname-error').html('Please enter the First Name');
+        $('#volunteerfname').focus();
+        error = 1
+      } else {
+        $('#volunteerfname-error').html('');
+      }
+      if ($('#volunteerlname').val() == '') {
+        $('#volunteerlname-error').html('Please enter the Last Name');
+        $('#volunteerlname').focus();
+        error = 1
+      } else {
+        $('#volunteerlname-error').html('');
+      }
+
+      if ($('#volunteerseanswer').val() == '') {
+        $('#vsecurity-ans-error').html('Please enter the answer');
+        $('#volunteerseanswer').focus();
+        error = 1
+      } else {
+        //var canswer1 = correctAnswer;
+        alert(correctAnswer);
+        var ans = $.trim($('#volunteerseanswer').val());
+        if (correctAnswer != ans) {
+          $('#vsecurity-ans-error').html('Please enter the correct answer');
+          $('#volunteerseanswer').focus();
+          error = 1
+
+        } else {
+          $('#vsecurity-ans-error').html('');
+        }
+
+      }
+
+      if (error == 0) {
+
+        $('#Volunteerformmodel').modal('hide');
+        $('#volunteerseanswer').val('');
+
+        $('.myModelicon').html('<i class="fa fa-spinner"></i>');
+        $('.mymodelmodal-title').html('Please wait');
+        $('.mymodelmbody').html('we are processing your request...');
+        $('.okbtn').hide();
+        $('#myModal').modal({
+          backdrop: 'static',
+          keyboard: false
+        });
+
+        $.ajax({
+          type: "POST",
+          url: 'enquirysave.php',
+          data: $('#Volunteerform').serialize(),
+          success: function (data) {
+            console.log(data);
+            $('.myModelicon').html('<i class="fa fa-check" aria-hidden="true"></i>');
+            $('.mymodelmodal-title').html('Volunteer!');
+            $('.mymodelmbody').html('Our team will contact you soon!');
+            $('.okbtn').show();
+            $('#popupokbtn').show();
+            $('#myModal').modal({
+              backdrop: 'static',
+              keyboard: false
+            });
+            $('#popupokbtn').click(function () {
+              $('#myModal').modal('hide');
+              $('#volunteeremail').val('');
+              $('#volunteerfname').val('');
+              $('#volunteerlname').val('');
+              $('#volunteerseanswer').val('');
+            });
+
+
+          }
+        });
+
+      }
+    }
+
+
+
+
+    $('#joinourcommunityfname').keyup(function () {
+
+      if ($('#joinourcommunityfname').val() == '') {
+        $('#jocfname-error').html('Please enter the First Name');
+        $('#joinourcommunityfname').focus();
+        error = 1
+      } else {
+        $('#jocfname-error').html('');
+      }
+    });
+    $('#joinourcommunitylname').keyup(function () {
+
+      if ($('#joinourcommunitylname').val() == '') {
+        $('#joclname-error').html('Please enter the Last Name');
+        $('#joinourcommunitylname').focus();
+        error = 1
+      } else {
+        $('#joclname-error').html('');
+      }
+    });
+
+    $('#joinourcommunityemail').keyup(function () {
+      if ($('#joinourcommunityemail').val() == '') {
+        $('#joinourcommunityemail-error').html('Please enter the Email');
+        $('#joinourcommunityemail').focus();
+      } else {
+        var email = $('#joinourcommunityemail').val();
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          $('#joinourcommunityemail').focus();
+          $('#joinourcommunityemail-error').html('Please enter a valid email');
+        } else {
+          $('#joinourcommunityemail-error').html('');
+        }
+
+      }
+
+    });
+
+
+    let canswer;
+    function savejoincommunity() {
+      error = 0;
+      if ($('#joinourcommunityemail').val() == '') {
+        $('#joinourcommunityemail-error').html('Please enter the Email');
+        $('#joinourcommunityemail').focus();
+        error = 1
+      } else {
+        var email = $('#joinourcommunityemail').val();
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          $('#joinourcommunityemail').focus();
+          $('#joinourcommunityemail-error').html('Please enter a valid email');
+          error = 1
+        } else {
+          $('#joinourcommunityemail-error').html('');
+        }
+
+      }
+      //joinourcommunityfname  joinourcommunitylname
+      if ($('#joinourcommunityfname').val() == '') {
+        $('#jocfname-error').html('Please enter the First Name');
+        $('#joinourcommunityfname').focus();
+        error = 1
+      } else {
+        $('#jocfname-error').html('');
+      }
+
+      if ($('#joinourcommunitylname').val() == '') {
+        $('#joclname-error').html('Please enter the Last Name');
+        $('#joinourcommunitylname').focus();
+        error = 1
+      } else {
+        $('#joclname-error').html('');
+      }
+
+
+
+      if (error == 0) {
+        generateEquation();
+        $('#sequretiquestionModal').modal({
+          backdrop: 'static',
+          keyboard: false
+        });
+        $('#securitysubmit').attr('rel', 'joinourcommunity');
+      }
+
+
+    }
+
+
+
+
+
+  </script> -->
+</body>
+
+</html>
