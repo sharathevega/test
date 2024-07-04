@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo-hd-1.png'
 import img4 from '../assets/images/img4.jpg';
 import icon1 from '../assets/images/icon_1.png';
@@ -21,6 +22,7 @@ import Footer from './Footer';
 import { Helmet } from 'react-helmet';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+
 
 const Main = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -739,6 +741,16 @@ const Main = () => {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="brand_wrap">
+                <div className="auto-container">
+                    <div className="row">
+                        <div className="col-md-12" style={{ textAlign: 'start' }}>
+                            <Link to="/">Home</Link> <i className="fa fa-angle-right"></i> <span></span>
                         </div>
                     </div>
                 </div>
