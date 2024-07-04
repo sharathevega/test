@@ -34,7 +34,7 @@ const Main = () => {
         }, 2000);
     }, []);
     return (
-        <div>
+        <>
             <Helmet>
                 <title>Innovative Nursing Strategies for a Healthier Tomorrow</title>
                 <meta name="description" content="Empowering Excellence in Nursing Practice. Join us for an unparalleled networking experience – register now to connect with industry professionals and leaders!" />
@@ -757,7 +757,7 @@ const Main = () => {
             </div>
             <Footer />
 
-        </div>
+        </>
     )
 }
 

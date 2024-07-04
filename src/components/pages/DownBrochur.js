@@ -2,10 +2,15 @@ import React from 'react'
 import Header from '../Header'
 import Footer from '../Footer'
 import { Link } from 'react-router-dom'
-
+import { Helmet } from 'react-helmet';
 const DownBrochur = () => {
     return (
         <div>
+            <Helmet>
+                <title>Download Brochure  for a Healthier Tomorrow</title>
+                <meta name="description" content="Empowering Excellence in Nursing Practice. Join us for an unparalleled networking experience – register now to connect with industry professionals and leaders!" />
+            </Helmet>
+
             <Header />
 
             <div class="brand_wrap">
@@ -24,7 +29,7 @@ const DownBrochur = () => {
 
             <div class="bg_add_form15">
                 <div class="auto-container">
-                    <div class="row clearfix wow fadeInUp justify-content-center" style={{display:"flex",justifyContent:"center"}} data-wow-delay="400ms" data-wow-duration="1000ms"
+                    <div class="row clearfix wow fadeInUp justify-content-center" style={{ display: "flex", justifyContent: "center" }} data-wow-delay="400ms" data-wow-duration="1000ms"
                         id="download-from">
                         <div class="col-md-8 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1000ms">
 

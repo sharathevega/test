@@ -1,12 +1,19 @@
 import React from 'react'
 import Header from '../Header'
 import Footer from '../Footer';
-
+import { Helmet } from 'react-helmet';
 import m4 from '../../assets/images/m4.jpg';
 
 const PlanningCommitte = () => {
     return (
         <div>
+
+            <Helmet>
+                <title>Planning committee of Nursing healthcare</title>
+                <meta name="description" content="Empowering Excellence in Nursing Practice. Join us for an unparalleled networking experience – register now to connect with industry professionals and leaders!" />
+            </Helmet>
+
+
             <Header />
             <div class="brand_wrap">
                 <div class="auto-container">

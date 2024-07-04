@@ -2,10 +2,17 @@ import React from 'react'
 import Header from '../Header'
 import Footer from '../Footer'
 import { Link } from 'react-router-dom'
-
+import { Helmet } from 'react-helmet';
 const Register = () => {
     return (
         <div>
+
+            <Helmet>
+                <title>Registartion for Nursing healthcare</title>
+                <meta name="description" content="Empowering Excellence in Nursing Practice. Join us for an unparalleled networking experience – register now to connect with industry professionals and leaders!" />
+            </Helmet>
+
+
             <Header />
 
             <div class="brand_wrap">
@@ -42,42 +49,42 @@ const Register = () => {
                                     </div>
                                     <div class="col-md-5">
                                         <input name="name" id="name" class="set157" placeholder="Name" value="" type="text"
-                                            required=""/>
-                                            <div class="error" id="name_error"></div>
+                                            required="" />
+                                        <div class="error" id="name_error"></div>
                                     </div>
                                 </div>
                                 <div class="row clearfix">
                                     <div class="col-md-1"></div>
                                     <div class="col-md-5">
                                         <input name="email" id="email" class="set157" placeholder="Email" value=""
-                                            type="email" required=""/>
-                                            <div class="error" id="email_error"></div>
+                                            type="email" required="" />
+                                        <div class="error" id="email_error"></div>
                                     </div>
                                     <div class="col-md-5">
                                         <input name="alt_email" id="alt_email" class="set157" value=""
-                                            placeholder="Alternative Email" type="email"/>
-                                            <div class="error" id="alt_email_error"></div>
+                                            placeholder="Alternative Email" type="email" />
+                                        <div class="error" id="alt_email_error"></div>
                                     </div>
                                 </div>
                                 <div class="row clearfix">
                                     <div class="col-md-1"></div>
                                     <div class="col-md-5">
                                         <input name="phone" id="phone" class="set157" placeholder="Phone" value=""
-                                            type="text" required=""/>
-                                            <div class="error" id="phone_error"></div>
+                                            type="text" required="" />
+                                        <div class="error" id="phone_error"></div>
                                     </div>
                                     <div class="col-md-5">
                                         <input name="whatsapp_number" id="whatsapp_number" class="set157" value=""
-                                            placeholder="WhatsApp Number" type="text"/>
-                                            <div class="error" id="whatsapp_number_error"></div>
+                                            placeholder="WhatsApp Number" type="text" />
+                                        <div class="error" id="whatsapp_number_error"></div>
                                     </div>
                                 </div>
                                 <div class="row clearfix">
                                     <div class="col-md-1"></div>
                                     <div class="col-md-5">
                                         <input name="city" id="city" class="set157" placeholder="City" type="text" value=""
-                                            required=""/>
-                                            <div class="error" id="city_error"></div>
+                                            required="" />
+                                        <div class="error" id="city_error"></div>
                                     </div>
                                     <div class="col-md-5">
                                         <select class="set156" name="country" id="country" required="">
@@ -348,25 +355,25 @@ const Register = () => {
                                         <td class="sty_m4">ON SPOT REGISTRATION <span>On October 17, 2024</span></td>
                                     </tr>
                                     <tr>
-                                        <td class="bg_ap1"><input type="radio" value=""/> Presenter (In-Person)</td>
+                                        <td class="bg_ap1"><input type="radio" value="" /> Presenter (In-Person)</td>
                                         <td><span class="mak1 ">$739</span></td>
                                         <td class="regtotal-active"><span class="mak1 register-active">$839</span></td>
                                         <td><span class="mak1">$939</span></td>
                                     </tr>
                                     <tr>
-                                        <td class="bg_ap1"><input type="radio" value=""/> Presenter (Virtual)</td>
+                                        <td class="bg_ap1"><input type="radio" value="" /> Presenter (Virtual)</td>
                                         <td><span class="mak1">$439</span></td>
                                         <td class="regtotal-active"><span class="mak1">$539</span></td>
                                         <td><span class="mak1">$639</span></td>
                                     </tr>
                                     <tr>
-                                        <td class="bg_ap1"><input type="radio" value=""/> Listener (In Person)</td>
+                                        <td class="bg_ap1"><input type="radio" value="" /> Listener (In Person)</td>
                                         <td><span class="mak1">$839</span></td>
                                         <td class="regtotal-active"><span class="mak1">$939</span></td>
                                         <td><span class="mak1">$839</span></td>
                                     </tr>
                                     <tr>
-                                        <td class="bg_ap2"><input type="radio" value=""/> Listener (Virtual)</td>
+                                        <td class="bg_ap2"><input type="radio" value="" /> Listener (Virtual)</td>
                                         <td><span class="mak1 mt11">$539</span></td>
                                         <td class="regtotal-active"><span class="mak1 mt11">$639</span></td>
                                         <td><span class="mak1 mt11">$739</span></td>
@@ -380,20 +387,20 @@ const Register = () => {
                                 <div class="row clearfix">
                                     <div class="col-md-4">
                                         <div class="tk_wrap1"><label class="container15">Single Occupancy - $200
-                                            <input type="checkbox" checked/>
-                                                <span class="checkmark"></span>
+                                            <input type="checkbox" checked />
+                                            <span class="checkmark"></span>
                                         </label> </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="tk_wrap1"><label class="container15">Double Occupancy - $220
-                                            <input type="checkbox"/>
-                                                <span class="checkmark"></span>
+                                            <input type="checkbox" />
+                                            <span class="checkmark"></span>
                                         </label> </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="tk_wrap1"><label class="container15">Triple Occupancy - $250
-                                            <input type="checkbox"/>
-                                                <span class="checkmark"></span>
+                                            <input type="checkbox" />
+                                            <span class="checkmark"></span>
                                         </label> </div>
                                     </div>
                                 </div>

@@ -2,10 +2,17 @@ import React from 'react'
 import Header from '../Header'
 import Footer from '../Footer'
 import { Link } from 'react-router-dom'
-
+import { Helmet } from 'react-helmet';
 const Guidelines = () => {
     return (
         <div>
+
+            <Helmet>
+                <title>Guidelines  for a Nursing Healthcare</title>
+                <meta name="description" content="Empowering Excellence in Nursing Practice. Join us for an unparalleled networking experience – register now to connect with industry professionals and leaders!" />
+            </Helmet>
+
+
             <Header />
 
 

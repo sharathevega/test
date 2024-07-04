@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
 import { Link } from 'react-router-dom';
-
+import { Helmet } from 'react-helmet';
 const Faqs = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -12,6 +12,13 @@ const Faqs = () => {
 
     return (
         <div>
+
+            <Helmet>
+                <title>FAQs of Nursing healthcare </title>
+                <meta name="description" content="Empowering Excellence in Nursing Practice. Join us for an unparalleled networking experience – register now to connect with industry professionals and leaders!" />
+            </Helmet>
+
+
             <Header />
 
             <div className="brand_wrap">

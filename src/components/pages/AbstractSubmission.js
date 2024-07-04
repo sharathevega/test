@@ -1,12 +1,17 @@
 import React from 'react'
 import Header from '../Header'
 import Footer from '../Footer'
-
+import { Helmet } from 'react-helmet';
 import map from '../../assets/images/map.png';
 
 const AbstractSubmission = () => {
     return (
         <div>
+            <Helmet>
+                <title>Innovative Nursing Strategies for a Healthier Tomorrow</title>
+                <meta name="description" content="Empowering Excellence in Nursing Practice. Join us for an unparalleled networking experience – register now to connect with industry professionals and leaders!" />
+            </Helmet>
+
             <Header />
 
             <div class="brand_wrap">
@@ -392,11 +397,6 @@ const AbstractSubmission = () => {
                                             Abstract</button>
                                     </div>
                                 </div>
-
-
-
-
-
 
                             </div>
 
